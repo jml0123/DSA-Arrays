@@ -1,4 +1,6 @@
-const memory = require('./memory')
+const memoryClass = require('./memory')
+
+memory = new memoryClass();
 
 class Array {
     constructor() {
@@ -62,3 +64,23 @@ class Array {
     }
 }
 Array.SIZE_RATIO = 3;
+
+
+function main () {
+    Array.SIZE_RATIO = 3;
+    let arr = new Array();
+
+    arr.push(3) 
+    console.log(arr) // Length = 1, capacity = 3, ptr = 0
+
+    arr.push(5);
+    arr.push(15);
+    arr.push(19);
+    arr.push(45);
+    arr.push(10);
+    console.log(arr) // Length = 6, capacity = 12, ptr = 3
+    // We pushed 6 values into the array which makes the length 6
+    // The capacity of the array is
+}
+
+main()
